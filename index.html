@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
+
   
   <title>Frontend Mentor | Interactive pricing component</title>
 
@@ -12,28 +17,58 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    </style>
 </head>
 <body>
-
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
-
-  Pageviews
-  $ /month
-
-  Monthly Billing
-  Yearly Billing 25% discount
-
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
   
-  <div class="attribution">
+  <div class="main">
+
+    <div class="header-container">
+      <h1>Simple, traffic-based pricing</h1>
+      <h3>Sign-up for our 30-day trial. No credit card required.</h3>
+    </div>
+
+    <div class="card-container">
+  
+      <div class="card-item">
+        <h4><span class="page-views"></span>PAGEVIEWS</h4>
+        <h4><span class="price">$</span> / month</h4>
+      </div>
+    
+      <div class="card-item">
+        <input type="range" name="billing" id="billing" min="0" max="4" value="2" step="1">
+      </div>
+    
+      <div class="card-item">
+        <span>Monthly Billing</span>
+        <label class="toggle">
+          <input type="checkbox">
+          <span class="slider"></span>
+        </label>
+        <span>Yearly Billing</span>        
+      </div>
+    
+      <div class="card-item">
+        <div class="list">
+          <ul>
+            <li>Unlimited websites</li>
+            <li>100% data ownership</li>
+            <li>Email reports</li>
+          </ul>
+        </div>
+    
+        <div class="btn">
+          <button type="submit">Start my trial</button>
+        </div>
+      </div>
+    
+    </div>
+
+  </div>
+  
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
 </body>
 </html>
