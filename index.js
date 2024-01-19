@@ -3,6 +3,7 @@ const toggleBtn = $('.slider');
 const prices = $('.price');
 const pageViews = $('.page-views');
 const duration = $('.duration');
+const button = $('button');
 
 let monthlyPriceList = ['8.00', '12.00', '16.00', '24.00', '36.00'];
 let yearlyPriceList = ['6.00', '9.00', '12.00', '18.00', '27.00'];
@@ -26,3 +27,6 @@ function updatePrices() {
     pageViews.text(pageViewsNumbers[rangeVal]);
     duration.text(isYearly ? '/ year' : '/ month');
 }
+
+button.click(function (e) { 
+});
