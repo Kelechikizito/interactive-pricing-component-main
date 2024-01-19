@@ -59,6 +59,10 @@ li {
     position: absolute;
 }
 
+.discount-two {
+    display: none;
+}
+
 .toggler {
     align-self: center;
     display: flex;
@@ -242,3 +246,45 @@ input[type='range']::-webkit-slider-thumb:active{
 
 /* RESPONSIVE DESIGN */
 
+@media (max-width:500px) {
+
+    body {
+        text-align: center;
+        height: fit-content;
+    }
+
+    .card-item:nth-child(1) {
+        flex-direction: column;
+    }
+
+    .card-item:nth-child(1) > * {
+        justify-content: center;
+    }
+
+    .discount {
+        transform: translate(17rem, 13.5rem);
+
+    }
+
+    .discount-one {
+        display: none;
+    }
+
+    .discount-two {
+        display: inline;
+    }
+
+    .card-item:nth-child(6) {
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    button {
+        width: 50%;
+    }
+}

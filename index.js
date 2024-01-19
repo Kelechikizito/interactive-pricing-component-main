@@ -1,34 +1,28 @@
-
 const rangeSlider = $('input[type="range"]');
 const toggleBtn = $('.slider');
-
 const prices = $('.price');
 const pageViews = $('.page-views');
 const duration = $('.duration');
 
-const monthlyPriceList = [8, 12, 16, 24, 26];
-const yearlyPriceList = [6, 9, 12, 18, 27];
+let monthlyPriceList = ['8.00', '12.00', '16.00', '24.00', '36.00'];
+let yearlyPriceList = ['6.00', '9.00', '12.00', '18.00', '27.00'];
 const pageViewsNumbers = ['10K', '50K', '100K', '500K', '1M'];
 
+let isYearly = false; // Initial state is monthly
 
-
-
-rangeSlider.click(function (e) { 
-    const rangeVal = e.target.value;
-    
-    if (rangeVal === '0') {
-        pageViews.text('10K');
-    } else if (rangeVal === '1') {
-        pageViews.text('50K');
-    }
-    
-    // e.preventDefault();
-    
+toggleBtn.click(function (e) {
+    isYearly = !isYearly; // Toggle the state
+    updatePrices();
 });
 
+rangeSlider.change(function (e) {
+    updatePrices();
+});
 
-// - 10K pageviews / $8 per month
-// - 50K pageviews / $12 per month
-// - 100K pageviews / $16 per month
-// - 500k pageviews / $24 per month
-// - 1M pageviews / $36 per month
+function updatePrices() {
+    const rangeVal = Number(rangeSlider.val());
+
+    prices.text('$' + (isYearly ? yearlyPriceList[rangeVal] : monthlyPriceList[rangeVal]));
+    pageViews.text(pageViewsNumbers[rangeVal]);
+    duration.text(isYearly ? '/ year' : '/ month');
+}
